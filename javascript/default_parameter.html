@@ -1,0 +1,10 @@
+<script>
+    const increment = (function() {
+        return function increment(number, value = 1) {
+            return number + value;
+        };
+    })();
+
+    console.log(increment(4, 29));
+    console.log(increment(4));
+</script>

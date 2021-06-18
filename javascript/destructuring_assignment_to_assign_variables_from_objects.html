@@ -1,0 +1,28 @@
+<script>
+    var voxel = {x: 3.7, y: 7.4, z: 6.54};
+
+    var x = voxel.x;    // x = 3.7
+    var y = voxel.z;    // y = 7.4
+    var z = voxel.z;    // z = 6.54
+
+    // simpler way
+    var { x : a, y : b, z : c } = voxel;    //declaring variable a, b, c in a single line of code
+
+
+    
+    const AVG_TEMPERATURE = {
+        today: 77.5,
+        tomorrow: 79
+    };
+
+    function getTempOfTmrw(avgTemperatures) {
+        "use strict";
+
+        const { tommorow : tempOfTomorrow } = avgTemperatures;
+
+        return tempOfTomorrow;
+    }
+
+    console.log(getTempOfTmrw(AVG_TEMPERATURE));
+
+</script>
