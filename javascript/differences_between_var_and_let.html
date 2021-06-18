@@ -1,0 +1,37 @@
+<script>
+    /*
+        var is declared normally.
+        after es5,(released in 2015), let can be used to declare variable.
+        difference is that "var" can declare same name of variable multiple times, and it overrides it.
+        where "let" variables cannot be declared with same name twice.
+    */
+    var catName = "Quincy";
+    var quote;
+
+    var catName = "Beau";
+
+    function catTalk() {
+        "use strict";
+
+        catName = "Oliver";
+        quote = catName + " says Meow!";
+
+    }
+
+    catTalk();
+
+
+
+    function checkScope() {
+    "use strict";
+        var i = "function scope";
+        if (true) {
+            i = "block scope";
+            console.log("Block scope i is: ", i);
+        }
+        console.log("Function scope i is: ", i);
+        return i;
+    }
+
+    checkScope();
+</script>
