@@ -1,0 +1,31 @@
+h1 {
+    font-weight: 500;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.header {
+    background: navy;
+    color: lightblue;
+    padding: 10px 20px;
+}
+
+.footer {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.post-card {
+    text-align: left;
+    border: 1px solid;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
