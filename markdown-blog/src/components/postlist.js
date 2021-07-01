@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import Markdown from "react-markdown"
 import postlist from "../posts.json"
 
@@ -17,11 +18,11 @@ const PostList = () => {
                 postlist.map((post, i) => {
                     return (
                         <div key={i} className="post-card">
-                            <h2>{post.title}</h2>
+                            <h2><Link className="links" to={`/post/${post.id}`}>{post.title}</Link></h2>
                             <small>Published on {post.date}</small>
                             <hr/>
                             <Markdown children={excerptList[i]} />
-                            <small>Read more...</small>
+                            <small><Link className="links" to={`/post/${post.id}`}>Read more...</Link></small>
                         </div>
                     )
                 })
