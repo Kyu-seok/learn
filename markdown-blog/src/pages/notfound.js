@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import "./pages.css"
+import "../global.css"
 
 const NotFound = () => {
     return (

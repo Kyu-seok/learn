@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import About from "./pages/about"
 import Post from "./pages/post"
 import NotFound from "./pages/notfound"
+import "./global.css"
 
 ReactDOM.render(
   <Router>

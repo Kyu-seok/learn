@@ -1,17 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .postlist {
-    width: 40%;
+    width: 100%;
     margin: auto;
-    text-align: center;
 }
 
 .post {
-    width: 40%;
+    width: 100%;
     margin: auto;
 }
 

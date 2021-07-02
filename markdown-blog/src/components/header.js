@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import avatar from "../images/engineer.png";
 import githubIcon from "../images/github.png";
 import IgIcon from "../images/instagram.png";
+import "../global.css"
 
 const user = {
   githubLink: "https://github.com/yeumkyuseok",
