@@ -137,11 +137,24 @@ body {
   display: inline-block;
   margin: 1em 0;
   padding: 0.5em 0.75em;
+  color: #1ABC9C;
+    text-decoration: none;
 }
 
-.post-card .button :hover {
-  background-color: #383838;  
+button {
+  all: unset;
+  border-radius: 0.3em;
+  border: 1px solid;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em 0.75em;
+  color: #1ABC9C;
+    text-decoration: none;
+}
+
+button:hover {
+  background-color: #1ABC9C;  
     border: 1px solid #1ABC9C;
-    color: blue;
+    color: #fff;
     text-decoration: none;
 }

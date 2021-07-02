@@ -79,12 +79,12 @@ p, ol, ul, dl, .math-display {
   line-height: 1.5;
   margin-bottom: 1em;
 }
-// KaTeX math display
+/* KaTeX math display*/
 .math-display {
   display: inline-block;
   width: 100%;
 }
-// Lists within lists
+/* Lists within lists */
 li > ul, li > ol {
     margin-bottom: 0;
     margin-left: 1em;
@@ -107,7 +107,7 @@ a {
   margin: 0;
   padding: 0;
 }
-// Responsive media
+/* Responsive media */
 iframe, img, embed, object, video {
   max-width: 100%;
 }

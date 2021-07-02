@@ -3,8 +3,7 @@ import React from "react"
 const Footer = () => {
     return (
         <div className="footer">
-            <hr/>
-            <p>&copy; yeumkyuseok {new Date().getFullYear()}</p>
+            <small>&copy; yeumkyuseok {new Date().getFullYear()}</small>
         </div>
     )
 }

@@ -4,8 +4,8 @@ import Markdown from "react-markdown";
 import postlist from "../posts.json";
 import Button from "react-bootstrap/Button";
 import "../global.css";
-
 import "./components.css";
+
 
 const PostList = () => {
   const excerptList = postlist.map((post) => {
@@ -18,7 +18,7 @@ const PostList = () => {
       {postlist.length &&
         postlist.map((post, i) => {
           return (
-              <div>
+            <div>
               <div key={i} className="post-card">
                 <h1>
                   <Link className="links" to={`/post/${post.id}`}>
@@ -27,12 +27,12 @@ const PostList = () => {
                 </h1>
                 <p className="meta">Published on {post.date}</p>
                 <Markdown children={excerptList[i]} />
-                <a className="button">
-                  <Link to={`/post/${post.id}`}>Continue reading</Link>
-                </a>
+                <Link to={`/post/${post.id}`}>
+                  <button type="button">Continue reading </button>
+                </Link>
               </div>
-             <hr/>
-              </div>
+              <hr />
+            </div>
           );
         })}
     </div>
