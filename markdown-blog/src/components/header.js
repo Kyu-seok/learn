@@ -15,10 +15,14 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="branding">
-        <img className="avatar" src={avatar} alt="" />
+
+          <Link to="/">
+        <img className="avatar" src={avatar} alt="" >
+          </img>
+            </Link>
         <p className="header">
           <Link id="header-title" to="/">
-            Q's blog
+            Q's Blog
           </Link>
         </p>
       </div>

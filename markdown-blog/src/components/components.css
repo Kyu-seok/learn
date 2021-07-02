@@ -116,6 +116,10 @@ body {
     text-transform: uppercase;
 }
 
+.post-card .card-header {
+  margin: 1;
+}
+
 .post-card p{
   color: #383838;
     font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
@@ -157,4 +161,17 @@ button:hover {
     border: 1px solid #1ABC9C;
     color: #fff;
     text-decoration: none;
+}
+
+.footer {
+  padding: 5% 20%;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #6b6b6b;
+  font-size: 0.9em;
+}
+
+.card-content {
+  margin-top: 1em;
 }

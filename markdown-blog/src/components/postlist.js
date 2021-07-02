@@ -20,13 +20,15 @@ const PostList = () => {
           return (
             <div>
               <div key={i} className="post-card">
+                <header className="card-header">
                 <h1>
                   <Link className="links" to={`/post/${post.id}`}>
                     {post.title}
                   </Link>
                 </h1>
                 <p className="meta">Published on {post.date}</p>
-                <Markdown children={excerptList[i]} />
+                </header>
+                <Markdown className ="card-content" children={excerptList[i]} />
                 <Link to={`/post/${post.id}`}>
                   <button type="button">Continue reading </button>
                 </Link>
