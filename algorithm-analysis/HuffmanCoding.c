@@ -43,6 +43,10 @@ int main(void) {
 
     // find the frequencies of each alphabe below
 
+    for(int i = 0; i < types; i++) {
+        
+    }
+
 
     // implement huffman coding algorithm here.
 
