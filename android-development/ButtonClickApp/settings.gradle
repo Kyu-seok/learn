@@ -1,0 +1,2 @@
+rootProject.name = "Button Click App"
+include ':app'
