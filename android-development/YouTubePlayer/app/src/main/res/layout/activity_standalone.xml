@@ -3,26 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnPlaySingle"
+        android:id="@+id/btnPlayVideo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Play a single video"
-        android:textAllCaps="false"
+        android:text="Play Video"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnStandalone"
+        android:id="@+id/btnPlayList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Standalone Sub Munu"
-        app:layout_constraintStart_toStartOf="@+id/btnPlaySingle"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlaySingle" />
+        android:text="Play Playlist"
+        app:layout_constraintStart_toStartOf="@+id/btnPlayVideo"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayVideo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
