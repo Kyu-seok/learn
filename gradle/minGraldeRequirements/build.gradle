@@ -1,0 +1,108 @@
+import java.text.SimpleDateFormat
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z")
+sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
+
+println "Hello World now: " + sdf.format(new Date())
+
+
+void sayHelloWorld() {
+    println "Hello World!"
+}
+
+sayHelloWorld()
+
+int doubleIt(int i) {
+    println(i)
+    i * 3
+    Integer y = i
+}
+
+println doubleIt(2)
+
+
+
+def s1 = "a string"
+println s1
+def s2 = 'a string'
+println s2
+
+def s3 = """
+A
+String
+on
+multiple
+lines
+"""
+println s3
+
+
+
+
+
+//  String interpoliation
+
+def x = 4
+println "x is $x"
+
+def myCourse = "gradle"
+println "I'm training in: ${myCourse.toUpperCase()}"
+
+
+
+
+//  Properties
+
+class Person {
+    String name
+    Integer age
+
+    Person (name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+def p1 = new Person("Fred", 35)
+println p1.age
+
+p1.age = 36
+println p1.age
+
+
+//  with a Map
+
+Map m = new HashMap()
+
+m.put("foo", "Fred")
+println m.get("foo")
+
+m.foo = "bill"
+m.bar = "Jane"
+m.baz = "Dave"
+
+println m.foo
+println m.bar
+println m.baz
+
+
+
+
+//  Closures
+
+Closure echoIt = { a, b, c ->
+    println a
+    println b
+    println c
+    4
+}
+
+println echoIt("Hello from the other side", "how are you?", "today!")
+
+//  pass closures as parameters
+
+def oneArgMethod(closure) {
+    closure() * 2
+}
+
+println oneArgMethod {10}
