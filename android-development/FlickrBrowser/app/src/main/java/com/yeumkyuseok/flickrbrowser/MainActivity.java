@@ -1,54 +1,41 @@
 package com.yeumkyuseok.flickrbrowser;
 
 import android.os.Bundle;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.yeumkyuseok.flickrbrowser.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GetRawData.OnDownloadComplete {
+    private static final String TAG = "MainActivity";
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: starts");
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        GetRawData getRawData = new GetRawData(this);
+        getRawData.execute("https://www.flickr.com/services/feeds/photos_public.gne?tags=android,nougat,%20sdk&tagmode=any&format=json&nojsoncallback=1");
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Log.d(TAG, "onCreate: ends");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        Log.d(TAG, "onCreateOptionsMenu() returned: " + true);
         return true;
     }
 
@@ -64,13 +51,19 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        Log.d(TAG, "onOptionsItemSelected() returned: returned");
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void onDownloadComplete(String data, DownloadStatus status) {
+        if (status == DownloadStatus.OK) {
+            Log.d(TAG, "onDownloadComplete: data is " + data);
+        } else {
+            //  download or processing failed
+            Log.e(TAG, "onDownloadComplete: failed with status " + status );
+        }
     }
+
+
 }
