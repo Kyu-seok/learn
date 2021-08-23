@@ -1,21 +1,25 @@
 package com.yeumkyuseok.flickrbrowser;
 
+/**
+ * Created by timbuchalka on 5/08/2016.
+ */
+
 class Photo {
 
     private String mTitle;
     private String mAuthor;
-    private String mAuthorID;
+    private String mAuthorId;
     private String mLink;
     private String mTags;
     private String mImage;
 
-    public Photo(String title, String mAuthor, String authorID, String link, String tags, String image) {
-        this.mTitle = mTitle;
-        this.mAuthor = mAuthor;
-        this.mAuthorID = mAuthorID;
-        this.mLink = mLink;
-        this.mTags = mTags;
-        this.mImage = mImage;
+    public Photo(String title, String author, String authorId, String link, String tags, String image) {
+        mTitle = title;
+        mAuthor = author;
+        mAuthorId = authorId;
+        mLink = link;
+        mTags = tags;
+        mImage = image;
     }
 
     String getTitle() {
@@ -26,8 +30,8 @@ class Photo {
         return mAuthor;
     }
 
-    String getAuthorID() {
-        return mAuthorID;
+    String getAuthorId() {
+        return mAuthorId;
     }
 
     String getLink() {
@@ -47,7 +51,7 @@ class Photo {
         return "Photo{" +
                 "mTitle='" + mTitle + '\'' +
                 ", mAuthor='" + mAuthor + '\'' +
-                ", mAuthorID='" + mAuthorID + '\'' +
+                ", mAuthorId='" + mAuthorId + '\'' +
                 ", mLink='" + mLink + '\'' +
                 ", mTags='" + mTags + '\'' +
                 ", mImage='" + mImage + '\'' +
