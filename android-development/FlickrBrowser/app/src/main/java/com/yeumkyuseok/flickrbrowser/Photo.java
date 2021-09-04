@@ -1,14 +1,10 @@
 package com.yeumkyuseok.flickrbrowser;
 
-import java.io.Serializable;
-
 /**
  * Created by timbuchalka on 5/08/2016.
  */
 
-class Photo implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+class Photo {
 
     private String mTitle;
     private String mAuthor;

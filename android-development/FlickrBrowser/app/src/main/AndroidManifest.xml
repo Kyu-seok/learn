@@ -13,20 +13,12 @@
         android:theme="@style/Theme.FlickrBrowser">
         <activity
             android:name=".PhotoDetailActivity"
-            android:label="Photo Detail"
-            android:parentActivityName=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.FlickrBrowser.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+            android:theme="@style/Theme.FlickrBrowser.NoActionBar" />
         <activity
             android:name=".SearchActivity"
-            android:label="Search Activity"
-            android:parentActivityName=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.FlickrBrowser.NoActionBar" >
+            android:theme="@style/Theme.FlickrBrowser.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
