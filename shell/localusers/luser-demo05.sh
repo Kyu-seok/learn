@@ -13,3 +13,7 @@ echo "${PASSWORD}"
 # User the current date/time as the basis for the password.
 PASSWORD=$(date +%s)
 echo "${PASSWORD}"
+
+# Use nanoseconds to act as randoomization.
+PASSWORD=$(date +%s%N)
+echo "${PASSWORD}"
