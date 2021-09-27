@@ -19,5 +19,9 @@ PASSWORD=$(date +%s%N)
 echo "${PASSWORD}"
 
 # A better password.
-PASSWORD=$(date +%s%N | head -c32)
+PASSWORD=$(date +%s%N | sha256sum | head -c32)
+echo "${PASSWORD}"
+
+# An even better password.
+PASSWORD=$(date +%s%N${RADNOM}%{RANDOM} | sha256sum | head -c48)
 echo "${PASSWORD}"
