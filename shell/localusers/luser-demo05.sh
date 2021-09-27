@@ -17,3 +17,7 @@ echo "${PASSWORD}"
 # Use nanoseconds to act as randoomization.
 PASSWORD=$(date +%s%N)
 echo "${PASSWORD}"
+
+# A better password.
+PASSWORD=$(date +%s%N | head -c32)
+echo "${PASSWORD}"
