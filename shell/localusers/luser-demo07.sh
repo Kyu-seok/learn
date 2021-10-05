@@ -18,4 +18,5 @@ do
   echo "Parameter 3: ${3}"
   echo 
   shift 
+  sleep 1
 done
