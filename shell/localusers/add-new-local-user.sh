@@ -28,3 +28,41 @@ USER_NAME="${1}"
 shift
 COMMENT="${@}"
 
+# Generate a password
+PASSWORD=$(date +%s%N | sha256sum | head -c48)
+
+# Create the user with the password.
+useradd -c "${COMMENT}" -m ${USER_NAME}
+
+# Check to see if the useradd command succeeded.
+# We don't want to tell the user that an account was created when it hasn't been.
+if [[ "${?}" -ne 0 ]]
+then
+  echo 'The account could not be created.'
+  exit 1
+fi
+
+# Set the password.
+echo ${PASSWORD} | passwd --stdin ${USER_NAME} 
+
+# Cehck to see if the passwd command succeeded.
+if [[ "${?}" -ne 0 ]]
+then
+  echo 'The password for the account could not be set.'
+  exit 1
+fi
+
+# Force password change on first login.
+passwd -e ${USER_NAME}
+
+# Display the username, password, and the host where the user was created.
+echo 
+echo 'username:'
+echo "${USER_NAME}"
+echo 
+echo 'password:'
+echo "${PASSWORD}"
+echo
+echo 'host:'
+echo "${HOSTNAME}"
+exit 0
