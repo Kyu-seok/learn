@@ -2,7 +2,7 @@ package com.yeumkyuseok.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringHelloApp {
+public class HelloSpringApp {
 
     public static void main(String[] args) {
 
@@ -14,6 +14,9 @@ public class SpringHelloApp {
 
         // call methods on the bean
         System.out.println(theCoach.getDailyWorkout());
+
+        // let's call our new method for fortunes
+        System.out.println(theCoach.getDailyFortune());
 
         // close the context
         context.close();
