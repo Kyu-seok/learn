@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="myLoggerConfig" class="com.yeumkyuseok.springdemo.MyLoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
-    <bean id="myFortune" class="com.yeumkyuseok.springdemo.HappyFortuneService">
+    <bean id="myFortuneService" class="com.yeumkyuseok.springdemo.HappyFortuneService">
     </bean>
 
     <bean id="myCoach" class="com.yeumkyuseok.springdemo.TrackCoach">
         <!-- set up constructor injection -->
-        <constructor-arg ref="myFortune"/>
+        <constructor-arg ref="myFortuneService"/>
     </bean>
 
+    <bean id="myCricketCoach" class="com.yeumkyuseok.springdemo.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
+    </bean>
 
 </beans>
