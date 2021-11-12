@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hb-01-one-to-one-uni" />
+        <module name="hibernate-tutorial" />
       </profile>
     </annotationProcessing>
   </component>
