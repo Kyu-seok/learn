@@ -2,10 +2,11 @@ package com.example.springdemo.conotroller;
 
 import com.example.springdemo.dao.CustomerDAO;
 import com.example.springdemo.entity.Customer;
+import com.example.springdemo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,20 +14,38 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    // need to inject the customer dao
     @Autowired
-    private CustomerDAO customerDAO;
+    private CustomerService customerService;
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String listCustomers(Model theModel) {
 
         // get customers from the dao
-        List<Customer> theCustomers = customerDAO.getCustomers();
+        List<Customer> theCustomers = customerService.getCustomers();
 
         // add the customers to the model
         theModel.addAttribute("customers", theCustomers);
 
         return "list-customers";
+    }
+
+    @GetMapping("/showFormForAdd")
+    public String showFormForAdd(Model theModel) {
+
+        Customer customer = new Customer();
+
+        theModel.addAttribute("customer", customer);
+
+        return "customer-form";
+    }
+
+    @PostMapping("/saveCustomer")
+    public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
+
+        // save the customer using our service
+        customerService.saveCustomer(theCustomer);
+
+        return "redirect:/customer/list";
     }
 
 }

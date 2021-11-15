@@ -52,6 +52,9 @@
         <element id="file-copy" path="$PROJECT_DIR$/target/spring-crm/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="web-customer-tracker/web/Web" />
+      <element id="directory" name="resources">
+        <element id="directory" name="css" />
+      </element>
     </root>
   </artifact>
 </component>

@@ -11,10 +11,10 @@ public class Customer {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "email")
@@ -44,8 +44,8 @@ public class Customer {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lsatName) {
+        this.lastName = lsatName;
     }
 
     public String getEmail() {
@@ -61,9 +61,9 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", lsatName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
-}
 
+}
