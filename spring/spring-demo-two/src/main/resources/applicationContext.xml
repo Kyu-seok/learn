@@ -4,27 +4,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- load the properties file: sport.properties -->
-    <context:property-placeholder location="classpath:sport.properties"/>
-
     <!-- define the dependencies -->
-    <bean id="myLoggerConfig" class="com.yeumkyuseok.springdemotwo.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
-        <property name="printedLoggerLevel" value="FINE"/>
-    </bean>
 
-    <bean id="myFortuneService" class="com.yeumkyuseok.springdemotwo.HappyFortuneService">
-    </bean>
+    <!-- add entry to enable component scanning -->
 
-    <bean id="myCoach" class="com.yeumkyuseok.springdemotwo.TrackCoach">
-        <!-- set up constructor injection -->
-        <constructor-arg ref="myFortuneService"/>
-    </bean>
+    <context:component-scan base-package="com.yeumkyuseok.springdemotwo"/>
 
-    <bean id="myCricketCoach" class="com.yeumkyuseok.springdemotwo.CricketCoach">
-        <property name="fortuneService" ref="myFortuneService"/>
-        <property name="emailAddress" value="${foo.email}"/>
-        <property name="team" value="${foo.team}"/>
-    </bean>
 
 </beans>
