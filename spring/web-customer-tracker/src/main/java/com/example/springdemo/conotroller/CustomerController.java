@@ -48,4 +48,14 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
+    @GetMapping("/showFormForUpdate")
+    public String showForForUpdate(@RequestParam("customerId") int theId, Model theModel) {
+
+        Customer theCustomer = customerService.getCustomers(theId);
+
+        theModel.addAttribute("customer", theCustomer);
+
+        return "customer-form";
+    }
+
 }
