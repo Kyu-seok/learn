@@ -1,7 +1,7 @@
-package com.yeumkyuseok.aopdemopointcutcombo;
+package com.yeumkyuseok.aopdemopointcutorder;
 
-import com.yeumkyuseok.aopdemopointcutcombo.dao.AccountDAO;
-import com.yeumkyuseok.aopdemopointcutcombo.dao.MembershipDAO;
+import com.yeumkyuseok.aopdemopointcutorder.dao.AccountDAO;
+import com.yeumkyuseok.aopdemopointcutorder.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainDemoApp {
@@ -14,7 +14,6 @@ public class MainDemoApp {
         // get the bean from spring container
         AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
         MembershipDAO theMembershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
-
 
         // call the business method
         Account myAccount = new Account();
