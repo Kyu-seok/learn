@@ -15,13 +15,17 @@ public class MainDemoApp {
         AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
         MembershipDAO theMembershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
 
+
         // call the business method
-        theAccountDAO.addAccount();
+        Account myAccount = new Account();
+        theAccountDAO.addAccount(myAccount, true);
         theMembershipDAO.addSillyMember();
+
+        theAccountDAO.doWork();
+        theMembershipDAO.goToSleep();
 
         // close the context
         context.close();
-
     }
 
 }
