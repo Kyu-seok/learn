@@ -7,28 +7,44 @@
 </head>
 
 <body>
-    <h2>Yeumkyuseok Company Home Page</h2>
-    <hr>
+<h2>Yeumkyuseok Company Home Page</h2>
+<hr>
 
-    <p>
+<p>
     Welcome to the Yeumkyuseok company home page!!!
-    </p>
+</p>
 
-    <hr>
+<hr>
 
-    <!-- display user name and role -->
+<!-- display user name and role -->
 
+<p>
+    User: <security:authentication property="principal.username"/>
+    <br><br>
+    Role(s): <security:authentication property="principal.authorities"/>
+</p>
+
+<hr>
+
+<security:authorize access="hasRole('MANAGER')">
+    <!-- Add a link to point to /leaders ... this is for the managers -->
     <p>
-        User: <security:authentication property="principal.username" />
-        <br><br>
-        Role(s): <security:authentication property="principal.authorities" />
+        <a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
+        (Only for Manager peeps)
     </p>
+</security:authorize>
 
-    <hr>
+<security:authorize access="hasRole('ADMIN')">
+    <!-- Add a link to point to /systems ... this is for the admin -->
+    <p>
+        <a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
+        (Only for Admin peeps)
+    </p>
+</security:authorize>
 
-    <!-- Add a logout button -->
-    <form:form action="${pageContext.request.contextPath}/logout" method="POST">
-        <input type="submit" value="Logout" />
-    </form:form>
+<!-- Add a logout button -->
+<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+    <input type="submit" value="Logout"/>
+</form:form>
 </body>
 </html>
