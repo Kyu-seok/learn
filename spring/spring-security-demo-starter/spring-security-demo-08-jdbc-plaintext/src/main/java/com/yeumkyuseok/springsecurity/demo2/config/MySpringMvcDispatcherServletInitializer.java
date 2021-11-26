@@ -1,4 +1,4 @@
-package com.yeumkyuseok.springsecurity.demo.config;
+package com.yeumkyuseok.springsecurity.demo2.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
