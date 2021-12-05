@@ -61,7 +61,7 @@ public class CustomerRestController {
 
         customerService.deleteCustomer(customerId);
 
-        return "Deleted customer id of " + customerId;
+        return "Deleted customer id with" + customerId;
     }
 
 }
