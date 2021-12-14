@@ -22,21 +22,25 @@ public class EmployeeDaoJpaImpl implements EmployeeDao{
     public List<Employee> findAll() {
         Query query = entityManager.createQuery("from Employee");
         List<Employee> employees = query.getResultList();
-        return null;
+        return employees;
     }
 
     @Override
     public Employee findById(int id) {
-        return null;
+        Employee employee = entityManager.find(Employee.class, id);
+        return employee;
     }
 
     @Override
     public void save(Employee employee) {
-
+        Employee dbEmployee = entityManager.merge(employee);
+        employee.setId(dbEmployee.getId());
     }
 
     @Override
     public void deleteById(int id) {
-
+        Query query = entityManager.createQuery("delete from Employee where id=:employeeId");
+        query.setParameter("employeeId", id);
+        query.executeUpdate();
     }
 }
