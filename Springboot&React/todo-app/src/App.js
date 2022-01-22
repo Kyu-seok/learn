@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Component } from "react/cjs/react.production.min";
+import FirstComponent from "./components/learning-examples/FirstComponent";
+import SecondComponent from "./components/learning-examples/SecondComponent";
+import ThirdComponent from "./components/learning-examples/ThirdComponent";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello World
+      <FirstComponent />
+      <SecondComponent />
+      <ThirdComponent />
     </div>
   );
 }
+
+// Function Component
 
 export default App;
