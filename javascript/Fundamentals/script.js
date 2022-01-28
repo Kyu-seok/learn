@@ -1,3 +1,4 @@
+/*
 let js = 'amazing';
 // console.log(40 + 8 + 23 - 10);
 
@@ -81,3 +82,25 @@ const BMIMark = massMark / heightMark ** 2;
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn
 console.log(BMIMark, BMIJohn, markHigherBMI);
+*/
+
+const firstName = 'kyu';
+const job = 'programmer';
+const birthYear = 1997;
+const year = 2037;
+
+const kyu = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(kyu);
+
+const kyuNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(kyuNew);
+
+console.log(`Just a regular string...`);
+
+console.log('String with \n\
+multiple \n\
+lines');
+
+console.log(`String
+multiple
+lines`);
