@@ -1,4 +1,3 @@
-/*
 let js = 'amazing';
 // console.log(40 + 8 + 23 - 10);
 
@@ -82,7 +81,6 @@ const BMIMark = massMark / heightMark ** 2;
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn
 console.log(BMIMark, BMIJohn, markHigherBMI);
-*/
 
 const firstName = 'kyu';
 const job = 'programmer';
@@ -104,3 +102,126 @@ lines');
 console.log(`String
 multiple
 lines`);
+
+const age = 15;
+
+if (age >= 18) {
+    console.log('Sarah can start driving license🚗');
+} else {
+    const yearsLeft = 18 - age
+    console.log(`Sara is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 2012;
+
+let contury;
+const birthYear = 1991; 
+if (birthYear <= 2000) {
+    century = 20
+} else {
+    century = 21;
+}
+console.log(century);
+
+// type conversion
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Kyu'));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log('I am ' + 23 + ' years old');
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n);
+
+// 5 falsy values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Kyu'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+const money = 100;
+if (money) {
+    console.log("Don't spend it all ;)");
+} else {
+    console.log('You should get a job!');
+}
+
+let height;
+if (height) {
+    console.log('YAY! Height is defined');
+} else {
+    console.log('Height is UNDEFINED');
+}
+
+const age = '18';
+if (age === 18) console.log('You just became an adult');
+
+if (age == 18) console.log('You just became an adult (loose)');
+
+const favorite = prompt("What is your favourite number?");
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite == 23) { // '23' == 23
+    console.log('Cool! 23 is an amazing number!')
+} else if (favorite == 7) {
+    console.log('7 is also a cool number');
+} else {
+    console.log('Number is not 23 or 7')
+}
+
+if (favorite !== 23) {
+    console.log('Why not 23?');
+}
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+if (shouldDrive) {
+    console.log('Sara is able to drive!');
+} else {
+    console.log('Someone else should drive...');
+}
+
+const isTired = true; // c
+console.log(hasDriversLicense || hasGoodVision || isTired) ;
+
+const day = 'wednesday';
+
+switch (day) {
+    case 'monday':
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday': 
+        console.log('Recode videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend :D');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
