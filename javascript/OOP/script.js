@@ -289,7 +289,7 @@ jay.introduce();
 jay.calcAge();
 */
 
-// 1) Public fields
+// 1) Public fieldks
 // 2) private fields
 // 3) public methods
 // 4) private methods
