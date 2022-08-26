@@ -1,9 +1,11 @@
 {
   "devDependencies": {
-    "@types/node": "^18.11.5"
+    "@types/node": "^18.11.5",
+    "@types/yargs": "^17.0.13",
+    "nodemon": "^2.0.20"
   },
   "scripts": {
-    "build": "tsc --project ./"
+    "start": "nodemon dist/app.js"
   },
   "name": "notes-app",
   "version": "1.0.0",
@@ -13,6 +15,7 @@
   "description": "",
   "dependencies": {
     "chalk": "^4.1.2",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "yargs": "^17.6.0"
   }
 }
