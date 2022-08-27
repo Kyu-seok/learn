@@ -1,0 +1,113 @@
+/***** 2. Functional Programming *****/
+2. a)
+
+simplicity
+orthogonality
+data types
+syntax design
+support for abstraction
+expressivity
+type checking
+exception handling
+restricted aliasing
+
+// Make the table
+
+elixir and Scheme is both functional programming language, that treats functions aa a first class citizens.
+simplicity : scheme is better than elixir as scheme is a very simple language with very little keywords
+Data types: 
+  scheme = boolean, numbers, characters, symbols lists, vectors strings.
+  elixir = integer, float, boolean, atom, string, anonymous function, list, tuple
+syntax design: both have similar syntax as both are influenced by lisp.
+support for abstraction: 
+  both are functional programming language which does not support abstraction.
+expressivity: 
+  both are expressive high level language
+type checking: scheme have a type checking whereas elixir does not have typechecking.
+exception handling:
+  both have exception handling
+restricted aliasing:
+  both does not use pointer and uses variable reference instead.
+
+2. b)
+(define (member? x list)
+    (cond ((null? list) #f)
+          ((equal? x (car list)) #t)
+          (else   (member? x (cdr list)))))
+
+> (member? 2 '(4 2 3))
+#t
+> (member? 10 '(4 2 3))
+#f
+
+2. c)
+Functional Programming is in favor for carrying out concurrent task as following reasons.
+
+Immutability: Immutability is a characteristic of FP which does not allow changing the state of object after declaration. Once the object is creeted, it cannot be changed. This characteristic provides very safe environment for concurrent tasks as it solves memory corruption and prevents deadlock with the absence of mutual exclusion, which are a critical issue for multi-threaded jobs.
+
+Pure Function: Functional Programming has no side effects which implies they don't alter any variables or external data of any kind. When a function is transparent to the user and its return value depends only on its input arguments, it is said to be pure. The outcome won't change if the same parameters are passed into a pure function, and each process returns the same value, resulting in a predictable and consistent behaviour for all the calculations done concurrently.
+
+
+
+/***** 3. Logic Programming *****/
+
+3. a)
+The Prolog program above is checking whether the input list is sorted ascendingly. When a list with multiple element is given as an input, the program will check if first element is smaller than second element and execute recursive call until the list is left with only one element, and return true value. Otherwise, the program will return false, and stop the execution. Besides syntactic error such as variable x is given as lower case and not X uppercase, or operator <= is used instead of =<, the program is logically correct. However the issue might be there when an empty list is given as a input, and the program returns that the list is sorted when no element is present in the list.
+
+3. b)
+Prolog is a logical programming language that expresses sets of predicate logic. The nature of Prolog makes implementing rules and facts very simple, and due to this characteristic techniques needed in AI are widely used including pattern matching, tree-based data structuring and automatic backtracking. In the process of building AI, the clear prepare and manipulation of data has to be done in order to train the model. In this step, the Prolog is very useful. For example of an AI model calculating which object is closer, if object A is closer than object B, and B is closer than C, then A is closer than C. These kinds of relations are expressed logically by using Prolog. Another example of using Prolog is given few objects of data and to calculate whether the object is a "penguin" for example. The example code below shows elegant way of listing all the object model based on the rules and facts given to list out the models of penguin.
+As a part of discussion, simple problem domain that prolog could be useful is data manipulation from collected database. Asides sql or other form of database, using Prolog can perform very high level command of data manipulation with flexible and customizable predicate. for example, is_good_student(X) when scored_above_80(X) and attandance_above_80(X)
+
+
+/***** 5. Scripting Languages *****/
+5. a) 
+Python is a strongly typed language which the compiler keeps track of each and every variable used in the program. For example,
+
+a = "foo"
+b = 15
+c = a + b
+
+the code above will throw TypeError on line 3 as varaible a is containing string value, whereas b is containing int. 
+weakly typed language such as JavaScript will execute the line 3 and store "foo15" into c.
+This example proves that the python is a strongly typed language which the type matters on the correct calculations.
+
+5. b)
+simplicity
+orthogonality
+data types
+syntax design
+support for abstraction
+expressivity
+type checking
+exception handling
+restricted aliasing
+
+Scripting languages are very useful on manipulation and automation of the facilities in the existing system. These languages have general characteristics for their purpose, such as they tend to be high level language, which are interpreted at runtime rather than compiled. 9 characteristics for programming languages will be used to list the strength and weakness of these scripting languages.
+
+strength:
+simplicity
+orthogonality
+syntax design
+expressivity
+
+The functionalities of scripting languages tend to be simpler than other programming languages which are designed for building application. The features such as networking, database connectors, parallel programming are not supported in scripting languages (python and ruby maybe used for scripting, however they are used for general purposes). Due to its purpose, they have advantage on simplicity in the language. Along with the functionalities, the syntax of the language is generally designed in high level where user can easily understand, and follow the orthogonal way of programming language syntax. The expressivity of these languages are generally good expressing the logics with few lines of code. 
+
+
+weakness:
+data types
+support for abstraction
+type checking
+exception handling
+restricted aliasing
+
+Scripting languages tend to have weakness on support of various data types, compared to other programming languages, which does not emphasis on memory efficiency. Popular scripting language such as bash does not support any classes nor abstraction, and exceptions maybe handled with keywords such as trap!, however it is considered to be weaker than other programming languages. Finally, scripting languages does not use pointer and uses variable reference instead.
+
+/***** 6. EBNF & BNF *****/
+
+6. a)
+<action> ::= <type><number> | <type>
+
+<type> ::= "forward" | "backward" | "upwards" | "downwards" | "rotate_left" | "rotate_right" | "pick_up" | "drop"
+
+<number> ::= <digit> | <number><digit> | .<digit> | .<number><digit> | <number>.<number><digit>
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
