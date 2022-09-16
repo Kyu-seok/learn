@@ -3,9 +3,9 @@ package com.kyu.dependencyinjection.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class PropertyInjectedGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "HelloWorld";
+        return "Hello World - Property";
     }
 }
