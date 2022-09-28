@@ -22,6 +22,4 @@ public class JokeController {
         return "index";
     }
 
-
-
 }
