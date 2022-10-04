@@ -1,10 +1,10 @@
-package com.kyu.dependencyinjection;
+package guru.springframework.sfgdi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DependencyInjectionApplicationTests {
+class SfgDiApplicationTests {
 
 	@Test
 	void contextLoads() {

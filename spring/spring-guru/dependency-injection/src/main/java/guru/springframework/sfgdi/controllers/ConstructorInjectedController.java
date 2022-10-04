@@ -1,9 +1,12 @@
-package com.kyu.dependencyinjection.controllers;
+package guru.springframework.sfgdi.controllers;
 
-import com.kyu.dependencyinjection.services.GreetingService;
+import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
+/**
+ * Created by jt on 12/26/19.
+ */
 @Controller
 public class ConstructorInjectedController {
     private final GreetingService greetingService;
@@ -12,7 +15,7 @@ public class ConstructorInjectedController {
         this.greetingService = greetingService;
     }
 
-    public String getGreeting() {
+    public String getGreeting(){
         return greetingService.sayGreeting();
     }
 }

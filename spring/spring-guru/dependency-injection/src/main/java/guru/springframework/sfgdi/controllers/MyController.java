@@ -1,8 +1,11 @@
-package com.kyu.dependencyinjection.controllers;
+package guru.springframework.sfgdi.controllers;
 
-import com.kyu.dependencyinjection.services.GreetingService;
+import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
+/**
+ * Created by jt on 12/26/19.
+ */
 @Controller
 public class MyController {
 
@@ -12,8 +15,7 @@ public class MyController {
         this.greetingService = greetingService;
     }
 
-    public String sayHello() {
+    public String sayHello(){
         return greetingService.sayGreeting();
     }
-
 }

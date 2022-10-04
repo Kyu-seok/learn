@@ -8,7 +8,7 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kyu</groupId>
+	<groupId>guru.springframework</groupId>
 	<artifactId>dependency-injection</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dependency-injection</name>
