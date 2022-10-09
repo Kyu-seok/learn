@@ -1,0 +1,4 @@
+guru:
+  username: QADevUsername
+  password: QADevPassword
+  jdbcurl: QADevUrl
