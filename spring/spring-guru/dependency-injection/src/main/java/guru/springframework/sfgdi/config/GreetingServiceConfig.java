@@ -2,19 +2,30 @@ package guru.springframework.sfgdi.config;
 
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
+import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.*;
 
 /**
  * Created by jt on 2/20/21.
  */
+@EnableConfigurationProperties(SfgConstructorConfig.class)
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(sfgConfiguration.getUsername());
+        fakeDataSource.setPassword(sfgConfiguration.getPassword());
+        fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
+
+        return fakeDataSource;
+    }
 
     @Bean
     PetServiceFactory petServiceFactory() {
