@@ -1,6 +1,6 @@
 package com.kyu.petclinic.services.map;
 
-import com.kyu.petclinic.model.Specialty;
+import com.kyu.petclinic.model.Speciality;
 import com.kyu.petclinic.model.Vet;
 import com.kyu.petclinic.services.SpecialtyService;
 import com.kyu.petclinic.services.VetService;
@@ -32,11 +32,11 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
     @Override
     public Vet save(Vet object) {
 
-        if (object.getSpecialties().size() > 0) {
-            object.getSpecialties().forEach(specialty -> {
+        if (object.getSpecialities().size() > 0) {
+            object.getSpecialities().forEach(specialty -> {
                 if (specialty.getId() == null) {
-                    Specialty savedSpecialty = specialtyService.save(specialty);
-                    specialty.setId(savedSpecialty.getId());
+                    Speciality savedSpeciality = specialtyService.save(specialty);
+                    specialty.setId(savedSpeciality.getId());
                 }
             });
         }
