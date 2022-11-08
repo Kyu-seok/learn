@@ -14,7 +14,8 @@ public class Notes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    // @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Recipe recipe;
 
     @Lob
