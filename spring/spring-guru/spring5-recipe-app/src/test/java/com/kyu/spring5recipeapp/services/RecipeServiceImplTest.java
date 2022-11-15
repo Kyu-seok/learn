@@ -4,6 +4,7 @@ import com.kyu.spring5recipeapp.commands.RecipeCommand;
 import com.kyu.spring5recipeapp.converters.RecipeCommandToRecipe;
 import com.kyu.spring5recipeapp.converters.RecipeToRecipeCommand;
 import com.kyu.spring5recipeapp.domain.Recipe;
+import com.kyu.spring5recipeapp.exceptions.NotFoundException;
 import com.kyu.spring5recipeapp.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -52,7 +53,21 @@ class RecipeServiceImplTest {
     }
 
     @Test
+    public void getRecipeByIdTestNotFound() throws Exception {
+        Optional<Recipe> recipeOptional = Optional.empty();
+        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+
+        NotFoundException notFoundException = assertThrows(
+                NotFoundException.class, () -> recipeService.findById(1L),
+                "Expected exception to throw an error. But it didn't"
+        );
+
+        assertTrue(notFoundException.getMessage().contains("Recipe Not Found"));
+    }
+
+    @Test
     void getRecipes() {
+
         Recipe recipe = new Recipe();
         HashSet recipesData = new HashSet();
         recipesData.add(recipe);
