@@ -6,7 +6,7 @@
             <label>Enter your todo</label>
             <input autofocus />
         </div>
-        <button class="submit">Add</button>
+        <button type="submit">Add</button>
    </form>
 
    <script>
@@ -15,7 +15,6 @@
 
     document.querySelector('form').addEventListener('submit', (event) => {
         event.preventDefault();
-    
         const {value} = document.querySelector('input');
         ipcRenderer.send('todo:add', value);
     });
