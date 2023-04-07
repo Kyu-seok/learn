@@ -6,7 +6,7 @@ let mainWindow;
 let addWindow;
 
 app.on('ready', () => {
-  mainWindow = new BrowserWindow({webPreferences:{nodeIntegration: true}, contextIsolation: false});
+  mainWindow = new BrowserWindow({webPreferences:{nodeIntegration: true, contextIsolation: false}});
   mainWindow.loadURL(`file://${__dirname}/main.html`);
   mainWindow.on('closed', () => app.quit());
 
@@ -61,6 +61,7 @@ if (process.env.NODE_ENV !== 'production') {
   menuTemplate.push({
     label: 'View',
     submenu: [
+      { role: 'reload' },
       {
         label: 'Toggle Developer Tools',
         accelerator: process.platform === 'darwin' ? 'Command + Alt + I' : 'Ctrl + Shift + I',
