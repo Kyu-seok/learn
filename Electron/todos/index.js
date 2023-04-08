@@ -41,6 +41,12 @@ const menuTemplate = [
         }
       },
       {
+        label: 'Clear',
+        click() {
+          clearHtml();
+        }
+      },
+      {
         label: 'Quit',
         accelerator: process.platform === 'darwin' ? 'Command + Q' : 'Ctrl + Q',
         click() {
@@ -50,6 +56,10 @@ const menuTemplate = [
     ]
   }
 ];
+
+function clearHtml() {
+  mainWindow.webContents.send('todo:clear');
+}
 
 if (process.platform === 'darwin') {
   menuTemplate.unshift({
