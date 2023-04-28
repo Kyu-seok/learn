@@ -10,3 +10,18 @@ print(greeting + name)
 
 name = input("Please re-enter your name")
 print(greeting + ' ' + name)
+
+# Example for types
+age = 24
+print(age)
+
+print(type(greeting))
+print(type(age))
+
+age = "2 years"
+
+print(type(age))
+print(age)
+
+age = age + 1
+print(age)
